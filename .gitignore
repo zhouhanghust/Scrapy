@@ -1,0 +1,14 @@
+*.tar.gz
+**/*.tar.gz
+*.zip
+**/*.zip
+.DS_Store
+**/.DS_Store
+.idea/
+**/*.txt
+*.txt
+*.png
+**/*.png
+*.pyc
+**/*.pyc
+
