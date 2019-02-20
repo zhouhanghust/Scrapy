@@ -20,8 +20,8 @@ MYUSER_AGENTS = [
 ]
 
 MYPROXIES = [
-    {'ip_port': '114.249.116.88', 'user_pass': ''},
-    {'ip_port': '114.249.118.164', 'user_pass': ''}
+    {'ip_port': '119.102.25.226:9999', 'user_pass': ''},
+    {'ip_port': '113.121.145.9:9999', 'user_pass': ''}
 ]
 
 BOT_NAME = 'paramspider'
@@ -54,6 +54,7 @@ COOKIES = {
   '2': 'm',
   '3': 'n'
 }
+RANDOM_UA_TYPE = "random"
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
 
@@ -86,7 +87,7 @@ DOWNLOADER_MIDDLEWARES = {
     #'paramspider.middlewares.ProxyMiddleware': 2
     # 自定义的cookiemiddleware 设置小于700即可生效，这里不设置取消默认的cookiemiddleware
     'paramspider.middlewares.MyCookiesMiddleware': 3,
-    # 'paramspider.middlewares.ProxyMiddleware': 5
+    'paramspider.middlewares.ProxyMiddleware': 5
 }
 
 # Enable or disable extensions
