@@ -38,7 +38,7 @@ class JSPageMiddleware(object):
             input_name = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#loginname')))
             input_name.send_keys("18602718836")
             input_passwd = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#nloginpwd')))
-            input_passwd.send_keys("Zhang1991")
+            input_passwd.send_keys("xxx")
             submit = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,"#loginsubmit")))
             submit.click()
             time.sleep(10)
