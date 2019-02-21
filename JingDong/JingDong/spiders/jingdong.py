@@ -4,6 +4,11 @@ from selenium import webdriver
 from scrapy.xlib.pydispatch import dispatcher
 from scrapy import signals
 import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
 class JingdongSpider(scrapy.Spider):
     name = 'jingdong'
     allowed_domains = ['jd.com']
@@ -24,5 +29,11 @@ class JingdongSpider(scrapy.Spider):
         self.browser.quit()
 
     def parse(self, response):
-        text = response.css("#J_coupon > div.box_hd > a > h3::text").extract_first()
-        print(text)
+        wait = WebDriverWait(self.browser, 10)
+        input_passwd = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#key')))
+        input_passwd.send_keys("华为P20")
+        time.sleep(0.5)
+        sear = wait.until(EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, "#search > div > div.form > button")))
+        sear.click()
+        time.sleep(10)
